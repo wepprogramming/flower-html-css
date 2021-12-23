@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 90%;
+    margin: auto; 
+}
+
+ul,nav{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #000
+}
+
+.brand{
+    position: relative;
+}
+
+.brand > span{
+    font-size: 11px;
+    position: absolute;
+    background-color: #b1194a;
+    color: #fff;
+    padding: 2px 4px;
+    line-height: 10px;
+    border-radius: 50%;
+    bottom: -3px;
+    right: -4px;
+}
+
+button{
+    padding: 7px 29px;
+    border-radius: 32px;
+    outline: none;
+    border: none;
+    background-color: #444;
+    color:  #e8e8e8;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+button:hover{
+    background-color: #111;
+}
+
+/* header */
+header{
+    box-shadow: 0 0 4px 1px #999;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
+    /* position: relative; */
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__container > #check{
+    display: none;
+}
+
+.header__container > .fa-bars{
+    font-size: 1.6rem;
+    color: #333;
+    border-radius: 0.5rem;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+.header__logo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header__logo > span{
+    color: #ff002b;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header__list > li > a{
+    color: #666;
+    padding: 4px 8px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 10px 0 10px 0;
+    border-bottom: 3px solid transparent;
+}
+
+.header__list > li > a:hover,
+.header__list > li > a:focus{
+    color: #000;
+    background-color: #9744523c;
+    border-bottom: 3px solid rgb(85, 85, 85)
+}
+
+.header__icons > li{
+    padding: 0 2px;
+    color: #444
+}
+
+.header__icons > li:hover{
+    color: #000;
+    cursor: pointer;
+}
+/* home */
+.home{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(./img/home-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.home__container{
+    width: 60%
+}
+
+.home__container > h2{
+    font-size: 40px;
+}
+
+.home__container > h4{
+    font-size: 23px;
+    color: rgb(228, 26, 60);
+}
+
+.home__container > p{
+    font-size: 13px;
+    font-weight: 500;
+    color: #525252;
+    margin: 15px 0;
+}
+/* about */
+.about{
+    padding: 20px 0 40px 0;
+
+}
+
+.about__container > h3{
+    background-color: #ffc0cb41;
+    color: #ff4363;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about__container > h3 >span{
+    color: #111;
+}
+
+.about__content{
+    display: flex;
+    gap: 15px;
+}
+
+.about__vid{
+    flex: 1;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 0 4px 2px #ddd;
+    position: relative;
+}
+
+.about__vid > video{
+    width: 100%;
+    height: 100%;
+}
+
+.about__vid > h4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size:25px;
+    background-color: #fff;
+    mix-blend-mode: screen;
+}
+
+.about__info{
+    flex: 1;
+}
+
+.about__info > p{
+    color: gray;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+@media (max-width: 720px) {
+    .about__content{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 650px) {
+    .header__container > .fa-bars{
+        display: block;
+    }
+    .header__list{
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        flex-direction: column;
+        border-top: 1px solid #aaa;
+        width: 100%;
+        clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+        transition: clip-path 0.5s;
+    }
+    .header__list > li > a{
+        width: 100%;
+        display: block;
+        border-radius: 0;
+        transition: padding 0.5s;
+    }
+    .header__list > li > a:hover{
+        padding-left: 12px;
+    }
+    .header__container > #check:checked ~ .header__list{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0% 100%);
+    }
+    .home__container{
+        width: 80%;
+    }
+}
